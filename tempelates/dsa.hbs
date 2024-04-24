@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/189db44236.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <link rel="icon" href="/image/side_bar_image.png" type="image/png">
+
+    <title>Prepo</title>
+    <link rel="stylesheet" href="/css/style1.css" />
+  </head>
+  <body>
+    
+    
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo_item">
+        <i class="bx bx-menu" id="sidebarOpen"></i>
+        <img src="/image/side_bar_image.png" alt=""></i>Prepo
+      </div>
+
+      <div class="search_bar">
+        <input type="text" placeholder="Search"/>
+       
+    </div>
+   
+
+      <div class="navbar_content">
+        <i class="bi bi-grid"></i>
+        <i class='bx bx-sun' id="darkLight"></i>
+        <i class='bx bx-bell' ></i>
+       
+     
+        
+        
+      </div>
+    </nav>
+  
+    
+    <div id="header">
+       {{!-- <h1>Welcome to PreparationForPlacements</h1> --}}
+      <h1><span class="typed" data-typed-items="DSA Section"></span></h1>
+        
+      
+   
+    </div>
+
+
+    <!-- ------------------cards------------------- -->
+
+ <div id="services">
+    <div class="container">
+        <h1>Important Topics</h1>
+        <ul>
+            <li>
+                <a href="https://leetcode.com/discuss/study-guide/458695/Dynamic-Programming-Patterns#Decision-Making">Dp Patterns</a>
+                <h2>Minimum (Maximum) Path to Reach a Target</h2>
+                <p><strong>Problem List:</strong> <a href="https://leetcode.com/list/55ac4kuc">Link</a></p>
+                <h3>Generate problem statement for this pattern</h3>
+                <p><strong>Statement</strong></p>
+                <p>Given a target find minimum (maximum) cost / path / sum to reach the target.</p>
+                <p><strong>Approach</strong></p>
+                <p>Choose minimum (maximum) path among all possible paths before the current state, then add value for the current state.</p>
+                <pre>
+routes[i] = min(routes[i-1], routes[i-2], ... , routes[i-k]) + cost[i]
+                </pre>
+                <p>Generate optimal solutions for all values in the target and return the value for the target.</p>
+                <p><strong>Top-Down</strong></p>
+                <pre>
+for (int j = 0; j &lt; ways.size(); ++j) {
+    result = min(result, topDown(target - ways[j]) + cost/ path / sum);
+}
+return memo[/*state parameters*/] = result;
+                </pre>
+                <p><strong>Bottom-Up</strong></p>
+                <pre>
+for (int i = 1; i &lt;= target; ++i) {
+    for (int j = 0; j &lt; ways.size(); ++j) {
+        if (ways[j] &lt;= i) {
+            dp[i] = min(dp[i], dp[i - ways[j]] + cost / path / sum);
+        }
+    }
+}
+return dp[target];
+                </pre>
+                <p><strong>Similar Problems</strong></p>
+                <ul>
+                    <li>746. Min Cost Climbing Stairs Easy</li>
+                    <li>64. Minimum Path Sum Medium</li>
+                    <li>322. Coin Change Medium</li>
+                    <li>931. Minimum Falling Path Sum Medium</li>
+                    <li>983. Minimum Cost For Tickets Medium</li>
+                    <li>... (and more)</li>
+                </ul>
+            </li>
+
+           
+
+        </ul>
+    </div>
+</div>
+
+ 
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          
+          <li class="item">
+            <div href="/home" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
+              <span class="navlink">  Home</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+
+           
+          </li>
+          
+
+          
+        </ul>
+
+        <ul class="menu_items">
+          <li class="item">
+            <a href="/profile" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bxs-user-account"></i>
+
+              </span>
+              <span class="navlink">Profile</span>
+            </a>
+          </li>
+         
+          <li class="item">
+            <a href="/dsa" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-loader-circle"></i>
+              </span>
+              <span class="navlink">DSA</span>
+            </a>
+          </li>
+          <!-- End -->
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-code-curly"></i>
+
+              </span>
+              <span class="navlink">Programming</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-filter"></i>
+              </span>
+              <span class="navlink">DBMS</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-cloud-upload"></i>
+              </span>
+              <span class="navlink">Operating System</span>
+            </a>
+          </li>
+        </ul>
+        <ul class="menu_items">
+          <!-- <div class="menu_title menu_setting"></div> -->
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-flag"></i>
+              </span>
+              <span class="navlink">Software Engineering</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-medal"></i>
+              </span>
+              <span class="navlink">Interview</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-cog"></i>
+              </span>
+              <span class="navlink">Discussion Section</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bxs-contact"></i>
+
+              </span>
+              <span class="navlink">Contact Us</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-log-out'></i>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+
+   
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+  </body>
+</html>
